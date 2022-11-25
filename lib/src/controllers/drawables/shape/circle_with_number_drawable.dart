@@ -13,6 +13,8 @@ class CircleWIthNumberDrawable extends Sized2DDrawable implements ShapeDrawable 
   @override
   Paint paint;
   TextPainter textPainter;
+  int number;
+  Offset position;
 
   /// Creates a new [OvalDrawable] with the given [size] and [paint].
   CircleWIthNumberDrawable({
@@ -28,6 +30,8 @@ class CircleWIthNumberDrawable extends Sized2DDrawable implements ShapeDrawable 
     bool hidden = false,
     int number = 0,
   })  : paint = paint ?? ShapeDrawable.defaultPaint,
+        position = position,
+        number = number,
         textPainter = TextPainter(
             text: TextSpan(
               text: number.toString(),
@@ -85,6 +89,7 @@ class CircleWIthNumberDrawable extends Sized2DDrawable implements ShapeDrawable 
     Size? size,
     Paint? paint,
     bool? locked,
+    int? number,
   }) {
     return CircleWIthNumberDrawable(
       hidden: hidden ?? this.hidden,
@@ -95,6 +100,7 @@ class CircleWIthNumberDrawable extends Sized2DDrawable implements ShapeDrawable 
       size: size ?? this.size,
       locked: locked ?? this.locked,
       paint: paint ?? this.paint,
+      number: number ?? this.number,
     );
   }
 
